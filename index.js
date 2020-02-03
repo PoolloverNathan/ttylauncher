@@ -1,6 +1,6 @@
 const {spawn} = require("child_process");
 function tput() {
-	const tput = spawn(["tput", "-T", process.env["TERM"]]);
+	var tput = spawn(["tput", "-T", process.env["TERM"]]);
 	tput.stdout.pipe(process.stdout);
 	tput.stderr.pipe(process.stderr);
 	tputi = tput.stdin;
@@ -15,3 +15,5 @@ function tput() {
 	});
 	return tputi;
 }
+
+var tput = tput();
