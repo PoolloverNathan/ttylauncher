@@ -6,7 +6,7 @@ function tput() {
 	tputi = tput.stdin;
 	tputi.write("civis\n");
 	tputi.write("smcup\n");
-	proces.on("beforeExit", () => {
+	proces.once("beforeExit", () => {
 		tputi.write("rmcup\n");
 		tputi.write("cnorm\n");
 		tputi.end();
